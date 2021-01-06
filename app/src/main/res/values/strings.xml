@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MVI-Architecutre-Android-Beginners</string>
+    <string name="fetch_user">Fetch User</string>
+    <string name="my_text">You can start learning Android from MindOrks</string>
+</resources>
