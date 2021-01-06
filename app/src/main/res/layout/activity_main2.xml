@@ -16,4 +16,14 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:text="@string/my_text" />
 
+    <TextView
+        android:id="@+id/tvBulletText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/tvMessage"
+        app:layout_constraintStart_toStartOf="@+id/tvMessage"
+        app:layout_constraintTop_toBottomOf="@+id/tvMessage"
+        tools:text="How are you" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

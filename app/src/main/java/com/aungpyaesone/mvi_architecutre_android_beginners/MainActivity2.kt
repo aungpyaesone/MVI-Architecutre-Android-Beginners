@@ -5,6 +5,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Spannable
 import android.text.SpannableString
+import android.text.SpannableStringBuilder
+import android.text.Spanned
+import android.text.style.BulletSpan
 import android.text.style.ForegroundColorSpan
 import android.text.style.RelativeSizeSpan
 import kotlinx.android.synthetic.main.activity_main2.*
@@ -25,5 +28,24 @@ class MainActivity2 : AppCompatActivity() {
         )
         tvMessage.text = spannable
 
+        val bulletSpan = listOf("one","two","three","four","five")
+        tvBulletText.text = convertToBulletList(bulletSpan)
+
+    }
+
+    private fun convertToBulletList(stringList:List<String>): CharSequence{
+        val spannableStringBuilder = SpannableStringBuilder("Learn Android from \n")
+        stringList.forEachIndexed { index, text ->
+            val line : CharSequence = text + if(index < stringList.size -1) "\n" else ""
+            val spannable: Spannable = SpannableString(line)
+            spannable.setSpan(
+                BulletSpan(15,Color.BLUE),
+                0,
+                spannable.length,
+                Spanned.SPAN_INCLUSIVE_EXCLUSIVE
+            )
+            spannableStringBuilder.append(spannable)
+        }
+        return spannableStringBuilder
     }
 }
